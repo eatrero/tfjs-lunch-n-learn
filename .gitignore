@@ -1,0 +1,19 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-error.log
+package-lock.json
+
+
+# Compiled binary addons (http://nodejs.org/api/addons.html)
+dist
+.cache
+
+# Dependency directories
+node_modules
+
+# VS Code
+.vscode
+
+.DS_Store

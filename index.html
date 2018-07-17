@@ -1,0 +1,212 @@
+<!--
+Copyright 2018 Google LLC. All Rights Reserved.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+==============================================================================
+-->
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>WM Frontend Flash Card Game</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.cyan-teal.min.css" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+  <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header>
+    <svg width="20px" height="25px" fill="#ffffff" viewBox="0 0 20 16" xmlns="http://www.w3.org/2000/svg"><g fill="#ffffff" transform="translate(-16.000000, -14.000000)"><g><path d="M36,30 L36,26.8877805 L16,26.8877805 L16,30 L36,30 Z M36,23.5561097 L36,20.4438903 L16,20.4438903 L16,23.5561097 L36,23.5561097 Z M36,17.1122195 L36,14 L16,14 L16,17.1122195 L36,17.1122195 Z"></path></g></g></svg>
+    <svg class="wm-icon wm-logo" height="31px" width="98px" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M40.416 27.465c8.301 0 12.503-2.466 12.503-2.466l1.786 1.89S48.506 31 40.416 31s-14.288-4.111-14.288-4.111l1.785-1.89s4.202 2.466 12.503 2.466" fill="#FFF"></path><path d="M79.084 18.94c.621-.67.932-1.496.932-2.477 0-1.135-.48-2.06-1.44-2.775-.239-.18-1.46-.671-3.074-1.42-1.458-.677-.853-2.046.312-1.924.707.075 1.3.713 1.006 1.707 0 0-.088.19-.1.301-.01.11.045.192.151.179l2.534-.318c.066-.008.132-.092.14-.198l.023-.34v-.21c0-.922-.444-1.674-1.331-2.261-.723-.478-1.585-.717-2.586-.717-1.126 0-2.076.295-2.851.886-.885.67-1.327 1.605-1.327 2.806 0 1.345 1.054 2.43 2.491 3.252.55.294.78.436 1.934 1.024.78.398.67 1.71-.569 1.716-1.365.005-1.563-.904-1.553-1.345.01-.417.214-.783.23-.859.015-.076-.022-.172-.106-.16-.083.012-2.466.12-2.556.132-.09.013-.146.144-.146.144l-.028.378a3.186 3.186 0 0 0-.018.338c0 1.106.469 1.981 1.405 2.628.852.57 1.877.857 3.075.857 1.474 0 2.625-.448 3.452-1.344zM66.1 18.55c-.581.06-1.11-1.371-1.113-4.068-.002-2.715.533-3.996 1.127-3.984.528.01.89 1.507.943 3.923.054 2.415-.408 4.073-.957 4.13zm3.753-8.11c-.687-1.302-1.66-1.953-2.92-1.953-.952 0-1.696.386-2.233 1.158 0 0 .065-.649.046-.833-.018-.185-.258-.399-.396-.364-.137.034-1.682.59-3.003.503-.133-.007-.25.087-.25.253l.019 14.253c0 .205.073.291.273.291h3.083c.188 0 .264-.083.265-.315l.018-3.923c.551.575 1.24.86 2.063.86.561 0 1.092-.139 1.593-.42 1.538-.866 2.306-2.743 2.306-5.626 0-1.51-.287-2.805-.864-3.884zm-14.98 7.554c-1.09.017-1.678-1.75.084-2.745.658-.37.921-.686 1.16-.88l.058 1.748c0 .615-.074 1.858-1.302 1.877zm5.45.548c-.103.042-.134.046-.224.028-.208-.04-.296-.326-.296-.971v-6.15c0-1.834-2.035-2.976-4.267-2.977-1.124 0-1.916.184-2.654.522-1.037.476-1.723 1.28-1.723 2.414 0 .3.14.825.14.825.034.153.196.226.34.263.143.037 2.315.273 2.433.303.116.03.189-.102.161-.178-.101-.272-.343-.705-.291-1.335.094-1.138 2.09-1.1 2.08.011-.008.81-.328 1.285-1.377 1.705-1.534.615-2.057.905-2.296 1.043-1.254.725-1.705 1.654-1.705 2.833 0 1.117.402 1.91 1.04 2.525.588.573 1.398.793 2.421.86.834.054 1.797-.243 2.398-1.026.306.707 1.188 1.08 2.135 1.047.858-.03 1.182-.065 1.722-.34a.178.178 0 0 0 .1-.17v-1.146c0-.086-.068-.116-.137-.086zM35.109 4.512c.002-.202.26-.269.26-.269h5.375c.318 0 .428.143.466.356l1.31 7.417s1.815-7.236 1.873-7.458c.059-.222.192-.292.335-.292l5.215.001c.245 0 .296.133.294.332-.002.199.007 14.537-.002 15.351-.002.22-.123.312-.402.313-.305 0-3.885.009-4.057-.005-.246-.018-.344-.085-.358-.275l.003-10.19s-1.946 9.389-2.18 9.625c-.141.144-3.14.145-3.264.06-.262-.179-2.548-9.617-2.548-9.617s.01 9.914.012 10.13c.002.203-.23.261-.23.261s-1.637.004-1.815 0c-.287-.006-.272-.225-.272-.225L35.11 4.51zM29.077 19.968c-.489.142-1.525-2.709-1.52-6.38.004-4.299.9-6.505 1.399-6.51.299-.004.625 1.338.534 2.332-.41 4.398.157 8.465.242 9.356.053.546-.417 1.133-.655 1.202m-7.68-6.762c-.09-3.685 1.054-5.683 1.207-5.607.177.088.855 1.548.657 4.94-.21 3.565-1.116 4.977-1.116 4.977-.349-1.044-.719-3.134-.748-4.31m-5.934.511c-.09-3.684 1.045-5.662 1.206-5.606.23.08.783 1.627.632 4.94-.136 2.98-1.03 5.139-1.03 5.139-.35-1.043-.78-3.296-.808-4.473m17.05 5.669c-.06-.335-.62-2.053-.65-5.978-.041-5.008.66-7.467 1.132-8.865.377.117 1.028.315 2.114-.158-.92-.152-1.612-1.293-1.633-1.27-.29-.16-1.783-.495-2.167-.325-.758.335-1.264 3.655-1.264 3.655s-.312-1.258-.662-1.605c-.275-.274-1.685-.343-2.125.004-.27.214-2.497 2.836-2.243 8.97.1 2.418.422 4.191.884 5.445-.344.514-.831.998-1.4.962-1.08-.07-1.868-1.82-1.868-1.82s1.41-2.272 1.64-6.021c.264-4.308-.442-6.847-.775-7.247-.27-.327-1.933-.378-2.278.02-.714.828-2.41 3.396-2.203 8.388.108 2.602.8 4.603 1.693 6.023-.466.547-1.203 1.302-2.142 1.214-1.077-.1-1.782-1.657-1.782-1.657s1.323-2.48 1.553-6.23c.264-4.308-.449-6.988-.782-7.388-.27-.327-1.93-.307-2.274.092-.714.827-2.406 3.466-2.2 8.458.21 5.096 2.762 8.25 4.387 8.194.292-.011.562-.037.81-.091 1.24-.182 2.342-1.26 2.871-1.906.758.983 1.587 1.508 2.254 1.486.291-.01.614-.04.862-.093.884-.212 1.588-.88 2.053-1.452.426.777.933 1.053 1.453 1.301.348.167.984.136 1.226.078.737-.178 1.296-1.2 1.296-1.2s.377 1.045.627 1.177c.643.341 1.728-.07 1.881-.157.393-.313.626-1.25 2.082-1.561-.89-.867-2.306-.106-2.37-.443" fill="#00CDBE"></path><path d="M11.748 15.346c.257 6.088 2.22 8.736 2.13 9.01-.148.448-1.857 1.19-2.265 1.115-.096-.03-2.588-2.157-4.156-7.862-.271 4.908 1.675 8.298 1.649 8.533-.04.362-1.876 1.34-2.387 1.357C2.375 22.509 1.485 11.882.856 7.145.705 6.321 0 6.135 0 6.135S2.963 3.537 3.994 4.43c.373.324-.804 6.755 2.216 16.086-.053-1.227.273-3.403.644-4.942-.42-2.572-.616-5.028-.793-6.775-.017-.175-.317-.456-.332-.641 0 0 1.708-1.852 2.992-1.606.31.059-.444 7.26 2.3 13.357-1.222-6.207-.15-11.16-.26-13.577-.03-.673-.55-.97-.55-.97s1.767-1.222 2.4-.694c.187.155-1.05 6.272-.863 10.678" fill="#00CDBE"></path><g fill="#FFF"><path d="M54.88 1.602l-.97.276-.199-.788 1.455-.472h.654V6.17h-.94zM61.676 3.43v-.016c0-1.087-.547-1.977-1.378-1.977-.831 0-1.362.866-1.362 1.961v.016c0 1.087.54 1.978 1.377 1.978.84 0 1.363-.883 1.363-1.962m-3.718 0v-.016c0-1.576.94-2.852 2.355-2.852 1.409 0 2.34 1.261 2.34 2.836v.016c0 1.575-.939 2.852-2.355 2.852s-2.34-1.261-2.34-2.836M69.315 3.997l-2.14-3.34h1.124l1.5 2.434L71.323.657h1.085l-2.14 3.316v2.198h-.953zM74.2.657h3.994v.866h-3.048v1.434h2.702v.867h-2.702v1.481h3.086v.866H74.2zM83.58 3.981l-.932-2.206-.923 2.206h1.854zM82.224.617h.877l2.371 5.554h-1l-.547-1.332h-2.547l-.555 1.332h-.968l2.37-5.554zM89.689 3.39c.677 0 1.108-.363 1.108-.922v-.015c0-.591-.415-.914-1.116-.914h-1.377v1.852h1.385zM87.357.658h2.401c.677 0 1.208.205 1.554.551.285.3.447.709.447 1.19v.015c0 .907-.53 1.45-1.278 1.67l1.455 2.088h-1.124L89.49 4.25h-1.185V6.17h-.947V.657zM93.519 5.367l.57-.693c.516.457 1.039.717 1.7.717.586 0 .955-.283.955-.693v-.016c0-.393-.215-.606-1.215-.842-1.147-.284-1.794-.631-1.794-1.647v-.016c0-.945.769-1.6 1.84-1.6.784 0 1.408.246 1.953.695l-.507.732c-.485-.37-.97-.567-1.462-.567-.554 0-.878.291-.878.654v.015c0 .426.246.615 1.286.867 1.138.283 1.724.7 1.724 1.615v.016c0 1.031-.794 1.645-1.925 1.645-.823 0-1.6-.29-2.247-.882"></path><g><path d="M54.88 1.602l-.97.276-.199-.788 1.455-.472h.654V6.17h-.94zM61.676 3.43v-.016c0-1.087-.547-1.977-1.378-1.977-.831 0-1.362.866-1.362 1.961v.016c0 1.087.54 1.978 1.377 1.978.84 0 1.363-.883 1.363-1.962m-3.718 0v-.016c0-1.576.94-2.852 2.355-2.852 1.409 0 2.34 1.261 2.34 2.836v.016c0 1.575-.939 2.852-2.355 2.852s-2.34-1.261-2.34-2.836M69.315 3.997l-2.14-3.34h1.124l1.5 2.434L71.323.657h1.085l-2.14 3.316v2.198h-.953zM74.2.657h3.994v.866h-3.048v1.434h2.702v.867h-2.702v1.481h3.086v.866H74.2zM83.58 3.981l-.932-2.206-.923 2.206h1.854zM82.224.617h.877l2.371 5.554h-1l-.547-1.332h-2.547l-.555 1.332h-.968l2.37-5.554zM89.689 3.39c.677 0 1.108-.363 1.108-.922v-.015c0-.591-.415-.914-1.116-.914h-1.377v1.852h1.385zM87.357.658h2.401c.677 0 1.208.205 1.554.551.285.3.447.709.447 1.19v.015c0 .907-.53 1.45-1.278 1.67l1.455 2.088h-1.124L89.49 4.25h-1.185V6.17h-.947V.657zM93.519 5.367l.57-.693c.516.457 1.039.717 1.7.717.586 0 .955-.283.955-.693v-.016c0-.393-.215-.606-1.215-.842-1.147-.284-1.794-.631-1.794-1.647v-.016c0-.945.769-1.6 1.84-1.6.784 0 1.408.246 1.953.695l-.507.732c-.485-.37-.97-.567-1.462-.567-.554 0-.878.291-.878.654v.015c0 .426.246.615 1.286.867 1.138.283 1.724.7 1.724 1.615v.016c0 1.031-.794 1.645-1.925 1.645-.823 0-1.6-.29-2.247-.882"></path></g></g></g></svg>
+    <svg class="wm-search" width="24px" height="24px" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path fill="#ffffff" d="M1216 832q0-185-131.5-316.5t-316.5-131.5-316.5 131.5-131.5 316.5 131.5 316.5 316.5 131.5 316.5-131.5 131.5-316.5zm512 832q0 52-38 90t-90 38q-54 0-90-38l-343-342q-179 124-399 124-143 0-273.5-55.5t-225-150-150-225-55.5-273.5 55.5-273.5 150-225 225-150 273.5-55.5 273.5 55.5 225 150 150 225 55.5 273.5q0 220-124 399l343 343q37 37 37 90z"></path></svg>
+  </header>
+  <div id="no-webcam">
+      No webcam found. <br/>
+      To use this demo, use a device with a webcam.
+    </div>
+  <!-- Top -->
+
+  <div id="status">Loading mobilenet...</div>
+
+  <div class="controller-panels" id="controller" style="display:none">
+
+    <div class="panel training-panel">
+
+      <!-- Big buttons. -->
+      <div class="panel-row big-buttons">
+        <button id="train">
+          <span id="train-status">TRAIN</span>
+        </button>
+        <button id="predict">
+          <span>PREDICT</span>
+        </button>
+      </div><!-- /.panel-row -->
+
+      <div class="panel-row params-webcam-row">
+
+        <!-- Hyper params. -->
+        <div class="hyper-params">
+
+          <!-- Learning rate -->
+          <div class="dropdown">
+            <label>Learning rate</label>
+            <div class="select">
+              <select id="learningRate">
+                <option value="0.00001">0.00001</option>
+                <option selected value="0.0001">0.0001</option>
+                <option value="0.01">0.001</option>
+                <option value="0.03">0.003</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Batch size -->
+          <div class="dropdown">
+            <label>Batch size</label>
+            <div class="select">
+              <select id="batchSizeFraction">
+                <option value="0.05">0.05</option>
+                <option value="0.1">0.1</option>
+                <option selected value="0.4">0.4</option>
+                <option value="1">1</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Epochs -->
+          <div class="dropdown">
+            <label>Epochs</label>
+            <div class="select">
+              <select id="epochs">
+                <option value="10">10</option>
+                <option selected value="20">20</option>
+                <option value="40">40</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Hidden units -->
+          <div class="dropdown">
+            <label>Hidden units</label>
+            <div class="select">
+              <select id="dense-units">
+                <option value="10">10</option>
+                <option selected value="100">100</option>
+                <option value="200">200</option>
+              </select>
+            </div>
+          </div>
+
+        </div><!-- /.hyper-params -->
+
+        <div class="webcam-box-outer">
+          <div class="webcam-box-inner">
+            <video autoplay playsinline muted id="webcam" width="224" height="224"></video>
+          </div>
+        </div>
+
+      </div><!-- /.panel-row -->
+
+    </div><!-- /.panel -->
+
+    <div class="panel">
+
+      <div class="panel-row panel-row-top">
+
+        <div class="panel-cell panel-cell-left panel-cell-fill">
+        </div><!-- ./panel-cell -->
+
+        <div class="panel-cell panel-cell-center">
+          <div class="thumb-box">
+            <div class="thumb-box-outer">
+              <div class="thumb-box-inner">
+                <canvas class="thumb" width=224 height=224 id="up-thumb"></canvas>
+              </div>
+              <button class="record-button" id="up"/><span>Add Sample</span></button>
+            </div>
+            <p>
+              <span id="up-total">0</span> examples
+            </p>
+          </div>
+        </div><!-- ./panel-cell -->
+
+        <div class="panel-cell panel-cell-right panel-cell-fill">
+        </div><!-- ./panel-cell -->
+
+      </div><!-- /.panel-row -->
+      <div class="panel-row panel-row-middle">
+        <div class="panel-cell panel-cell-left">
+          <div class="thumb-box">
+            <div class="thumb-box-outer">
+              <div class="thumb-box-inner">
+                <canvas class="thumb" width=224 height=224 id="left-thumb"></canvas>
+              </div>
+              <button class="record-button" id="left"/><span>Add Sample</span></button>
+            </div>
+            <p>
+              <span id="left-total">0</span> examples
+            </p>
+          </div>
+        </div><!-- ./panel-cell -->
+
+        <div class="panel-cell panel-cell-center panel-cell-fill">
+        </div><!-- ./panel-cell -->
+
+        <div class="panel-cell panel-cell-right">
+          <div class="thumb-box">
+            <div class="thumb-box-outer">
+              <div class="thumb-box-inner">
+                <canvas class="thumb" width=224 height=224 id="right-thumb"></canvas>
+              </div>
+              <button class="record-button" id="right"/><span>Add Sample</span></button>
+            </div>
+            <p>
+              <span id="right-total">0</span> examples
+            </p>
+          </div>
+        </div><!-- ./panel-cell -->
+
+      </div><!-- /.panel-row -->
+
+      <div class="panel-row panel-row-bottom">
+
+        <div class="panel-cell panel-cell-left panel-cell-fill">
+        </div><!-- ./panel-cell -->
+
+        <div class="panel-cell panel-cell-center">
+          <div class="thumb-box">
+            <div class="thumb-box-outer">
+              <div class="thumb-box-inner">
+                <canvas class="thumb" width=224 height=224 id="down-thumb"></canvas>
+              </div>
+              <button class="record-button" id="down"/><span>Add Sample</span></button>
+            </div>
+            <p>
+              <span id="down-total">0</span> examples
+            </p>
+          </div>
+        </div><!-- ./panel-cell -->
+
+        <div class="panel-cell panel-cell-right panel-cell-fill">
+        </div><!-- ./panel-cell -->
+
+      </div><!-- /.panel-row -->
+
+
+    </div><!-- /.panel -->
+
+  </div><!-- /#controller -->
+
+  <script src="index.js"></script>
+</body>
+</html>
