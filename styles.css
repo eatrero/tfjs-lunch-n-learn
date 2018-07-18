@@ -278,7 +278,7 @@ header b {
 [data-active="right"] .panel-cell-right .thumb-box-outer,
 [data-active="down"] .panel-cell-down .thumb-box-outer
 {
-  box-shadow: 0 0 4px 4px #0cdb;
+  box-shadow: 0 0 8px 8px #0cdb;
 }
 .thumb-box-inner {
   border-bottom: 0.0625rem solid rgb(223, 223, 223);
