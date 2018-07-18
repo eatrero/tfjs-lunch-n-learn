@@ -80,11 +80,8 @@ header b {
 
 /** Controls. **/
 .controller-panels {
-  display: flex;
-  flex-direction: row;
   margin: 9px auto 0;
-  padding-top: 50px;
-  border-bottom: 1px dashed #565656;
+  padding-top: 150px;
 }
 .panel {
   box-sizing: border-box;
@@ -94,17 +91,17 @@ header b {
   flex-shrink: 0;
 }
 .panel:first-child {
-  border-right: 1px dashed #565656;
-  padding: 0 22px 0 13px;
-  width: 400px;
+  padding: 20px 22px 0 13px;
+  width: 360px;
 }
 .panel:last-child {
   padding: 0 9px 0 22px;
-  width: 800px;
+  width: 1000px;
 }
 .panel-row {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 }
 .panel-cell {
   align-items: center;
@@ -178,7 +175,7 @@ header b {
   margin-top: 35px;
 }
 .webcam-box-outer {
-  background: black;
+  background: white;
   border: 1px solid #585858;
   border-radius: 4px;
   box-sizing: border-box;
@@ -267,34 +264,50 @@ header b {
   margin-top: 18px;
 }
 .thumb-box-outer {
-  background: black;
-  border: 1px solid #585858;
+  background: white;
   border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 0.0625rem 0.1875rem;
   box-sizing: border-box;
   display: inline-block;
-  padding: 9px;
+  padding: 0px;
   position: relative;
   transition: box-shadow 0.3s;
 }
-[data-active="up"] .panel-row-top .thumb-box-outer,
-[data-active="down"] .panel-row-bottom .thumb-box-outer,
+[data-active="up"] .panel-cell-up .thumb-box-outer,
 [data-active="left"] .panel-cell-left .thumb-box-outer,
-[data-active="right"] .panel-cell-right .thumb-box-outer {
-  box-shadow: 0 0 4px 4px #ffaa00;
+[data-active="right"] .panel-cell-right .thumb-box-outer,
+[data-active="down"] .panel-cell-down .thumb-box-outer
+{
+  box-shadow: 0 0 4px 4px #0cdb;
 }
 .thumb-box-inner {
-  border: 1px solid #585858;
-  border-radius: 4px;
+  border-bottom: 0.0625rem solid rgb(223, 223, 223);
+  border-radius: 3px 3px 0 0;
   box-sizing: border-box;
   display: flex;
   justify-content: center;
   overflow: hidden;
-  width: 144px;
+  width: 200px;
 }
 .thumb {
-  height: 144px;
+  height: 200px;
   transform: scaleX(-1);
 }
+.thumb-box-info {
+  font-size: 1.125rem;
+  color: rgb(74, 74, 74);
+  display: flex;
+  justify-content: left;
+  padding-left: 20px;
+  padding-top: 40px;
+  padding-bottom: 10px;
+}
+
+.thumb-box-info > p  {
+  font-size: 1.125rem;
+  color: rgb(74, 74, 74);
+}
+
 .thumb-box-outer .record-button {
   height: 100%;
   left: 0;
@@ -303,9 +316,8 @@ header b {
   width: 100%;
 }
 .thumb-box-outer .record-button span {
-  background: #111;
+  background: red;
   border: 1px solid #585858;
-  border-radius: 3px;
   bottom: 9px;
   color: #f8f8f8;
   display: block;
@@ -314,6 +326,7 @@ header b {
   position: absolute;
   right: 9px;
   opacity: 0.5;
+  width: 20px;
 }
 
 /** Footer. **/
@@ -331,4 +344,32 @@ header b {
   color: white;
   padding: 30px;
   line-height: 30px;
+}
+
+.panel-header {
+  display: flex;
+  justify-content: left;
+  color: rgb(74, 74, 74);
+  font-size: 1.625rem;
+  font-weight: 600;
+  padding-left: 50px;
+}
+
+.panel-header > span {
+  transform: translate3d(10px, 3px, 0);
+}
+
+.prediction-panel {
+  display: flex;
+  flex-direction: row;
+  padding-top: 60px;
+  margin: 6px auto 0;
+  width: 1500px;
+}
+
+.prediction-row {
+  padding-top: 20px;
+  padding-left: 55px;
+  display: flex;
+  justify-content: left;
 }

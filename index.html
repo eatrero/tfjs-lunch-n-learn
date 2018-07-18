@@ -40,173 +40,167 @@ limitations under the License.
 
   <div class="controller-panels" id="controller" style="display:none">
 
-    <div class="panel training-panel">
+    <div class="panel-header">
+      <svg class="wm-icon-medical" width="30" height="28" fill="#4A4A4A" stroke="none" viewBox="0 0 23 28" xmlns="http://www.w3.org/2000/svg"><g stroke-width="1" fill-rule="evenodd"><g transform="translate(-97.000000, -985.000000)"><g transform="translate(97.000000, 306.000000)"><g transform="translate(0.000000, 675.000000)"><path d="M13.5720795,29.4658906 C13.2636549,28.8114355 13.0293061,28.8567927 12.9350278,27.8847344 C12.8699309,27.1257865 12.836709,26.4177101 12.9350278,25.456651 C10.4784056,26.9937955 7.90011959,28.0323076 3.96871602,28.0368906 C4.47422709,26.5611586 8.31269923,25.1784618 9.65189951,24.6972448 C8.83571912,24.6129172 8.01908978,24.5285897 7.20246045,24.4447204 C5.4188055,24.0418731 0.666283152,22.5074784 5.00927649e-05,21.307644 C3.53862757,20.7870131 7.05655361,21.0028733 9.79960212,22.066592 C8.86085999,21.1701535 7.7129099,20.4652852 6.90795311,19.4350225 C4.95998462,16.9409437 3.45153241,14.8474206 2.20436567,11.1878801 C5.19433344,12.5820344 7.86465301,14.7058054 9.79960212,17.2090503 C10.2234054,17.7571793 10.8317246,18.2544369 11.1226404,18.9295155 C10.6965925,13.7456629 11.2088377,10.290525 12.4447808,6.68460574 C12.7128005,5.90228442 12.8753182,4.97147329 13.326956,4.35689046 C13.7579423,5.72996291 14.3074499,7.13511649 14.6499943,8.60672385 C15.0118432,10.1667835 15.246641,11.8327108 15.3355319,13.5151371 C15.4338507,14.8978338 15.3355319,16.1127921 15.3355319,17.4111614 C15.2659456,17.8639637 15.2174596,18.7058642 15.1397923,19.1316267 C15.1397923,19.0977123 15.2376621,19.0642563 15.2376621,19.0308003 C15.793006,18.3053084 16.3483499,17.5798165 16.9041427,16.8543246 C18.2837479,15.0829878 22.0090861,11.9037476 24.2538067,11.1370086 C23.8313503,13.7791189 20.6007485,18.7063225 18.9127186,20.1435572 C18.0637653,20.8685908 17.214363,21.5940827 16.3649608,22.3195746 C19.6193566,21.0665772 22.893506,20.7466825 26.8500505,21.307644 C26.8172776,21.3750144 26.7845046,21.3915133 26.7521807,21.4084704 C25.3667391,22.8677037 21.970028,23.9419633 19.6471912,24.4447204 C18.749303,24.5285897 17.8509658,24.6129172 16.9526286,24.6972448 C18.6438011,24.9250208 21.8218764,26.8512636 22.63671,27.9864774 C20.0121827,28.3728259 17.2817047,27.3870186 15.4827856,26.569408 C14.8295719,26.1986418 14.1759093,25.8274172 13.5226956,25.456651 C13.3260581,27.7101214 13.6798261,28.9122472 14.1112614,30.3646059 C13.9640077,30.3811048 13.7193331,29.4489335 13.5720795,29.4658906 Z"></path></g></g></g></g></svg>
+      <span>Predict The WM Frontend Engineer</span>
+    </div>
 
-      <!-- Big buttons. -->
-      <div class="panel-row big-buttons">
-        <button id="train">
-          <span id="train-status">TRAIN</span>
-        </button>
-        <button id="predict">
-          <span>PREDICT</span>
-        </button>
-      </div><!-- /.panel-row -->
+    <div class="prediction-row">
+        <div class="panel training-panel">
 
-      <div class="panel-row params-webcam-row">
-
-        <!-- Hyper params. -->
-        <div class="hyper-params">
-
-          <!-- Learning rate -->
-          <div class="dropdown">
-            <label>Learning rate</label>
-            <div class="select">
-              <select id="learningRate">
-                <option value="0.00001">0.00001</option>
-                <option selected value="0.0001">0.0001</option>
-                <option value="0.01">0.001</option>
-                <option value="0.03">0.003</option>
-              </select>
-            </div>
-          </div>
-
-          <!-- Batch size -->
-          <div class="dropdown">
-            <label>Batch size</label>
-            <div class="select">
-              <select id="batchSizeFraction">
-                <option value="0.05">0.05</option>
-                <option value="0.1">0.1</option>
-                <option selected value="0.4">0.4</option>
-                <option value="1">1</option>
-              </select>
-            </div>
-          </div>
-
-          <!-- Epochs -->
-          <div class="dropdown">
-            <label>Epochs</label>
-            <div class="select">
-              <select id="epochs">
-                <option value="10">10</option>
-                <option selected value="20">20</option>
-                <option value="40">40</option>
-              </select>
-            </div>
-          </div>
-
-          <!-- Hidden units -->
-          <div class="dropdown">
-            <label>Hidden units</label>
-            <div class="select">
-              <select id="dense-units">
-                <option value="10">10</option>
-                <option selected value="100">100</option>
-                <option value="200">200</option>
-              </select>
-            </div>
-          </div>
-
-        </div><!-- /.hyper-params -->
-
-        <div class="webcam-box-outer">
-          <div class="webcam-box-inner">
-            <video autoplay playsinline muted id="webcam" width="224" height="224"></video>
-          </div>
-        </div>
-
-      </div><!-- /.panel-row -->
-
-    </div><!-- /.panel -->
-
-    <div class="panel">
-
-      <div class="panel-row panel-row-top">
-
-        <div class="panel-cell panel-cell-left panel-cell-fill">
-        </div><!-- ./panel-cell -->
-
-        <div class="panel-cell panel-cell-center">
-          <div class="thumb-box">
-            <div class="thumb-box-outer">
-              <div class="thumb-box-inner">
-                <canvas class="thumb" width=224 height=224 id="up-thumb"></canvas>
+            <!-- Big buttons. -->
+            <div class="panel-row big-buttons">
+              <button id="train">
+                <span id="train-status">TRAIN</span>
+              </button>
+              <button id="predict">
+                <span>PREDICT</span>
+              </button>
+            </div><!-- /.panel-row -->
+      
+            <div class="panel-row params-webcam-row">
+      
+              <!-- Hyper params. -->
+              <div class="hyper-params">
+      
+                <!-- Learning rate -->
+                <div class="dropdown">
+                  <label>Learning rate</label>
+                  <div class="select">
+                    <select id="learningRate">
+                      <option value="0.00001">0.00001</option>
+                      <option selected value="0.0001">0.0001</option>
+                      <option value="0.01">0.001</option>
+                      <option value="0.03">0.003</option>
+                    </select>
+                  </div>
+                </div>
+      
+                <!-- Batch size -->
+                <div class="dropdown">
+                  <label>Batch size</label>
+                  <div class="select">
+                    <select id="batchSizeFraction">
+                      <option value="0.05">0.05</option>
+                      <option value="0.1">0.1</option>
+                      <option selected value="0.4">0.4</option>
+                      <option value="1">1</option>
+                    </select>
+                  </div>
+                </div>
+      
+                <!-- Epochs -->
+                <div class="dropdown">
+                  <label>Epochs</label>
+                  <div class="select">
+                    <select id="epochs">
+                      <option value="10">10</option>
+                      <option selected value="20">20</option>
+                      <option value="40">40</option>
+                    </select>
+                  </div>
+                </div>
+      
+                <!-- Hidden units -->
+                <div class="dropdown">
+                  <label>Hidden units</label>
+                  <div class="select">
+                    <select id="dense-units">
+                      <option value="10">10</option>
+                      <option selected value="100">100</option>
+                      <option value="200">200</option>
+                    </select>
+                  </div>
+                </div>
+      
+              </div><!-- /.hyper-params -->
+      
+              <div class="webcam-box-outer">
+                <div class="webcam-box-inner">
+                  <video autoplay playsinline muted id="webcam" width="224" height="224"></video>
+                </div>
               </div>
-              <button class="record-button" id="up"/><span>Add Sample</span></button>
-            </div>
-            <p>
-              <span id="up-total">0</span> examples
-            </p>
-          </div>
-        </div><!-- ./panel-cell -->
-
-        <div class="panel-cell panel-cell-right panel-cell-fill">
-        </div><!-- ./panel-cell -->
-
-      </div><!-- /.panel-row -->
-      <div class="panel-row panel-row-middle">
-        <div class="panel-cell panel-cell-left">
-          <div class="thumb-box">
-            <div class="thumb-box-outer">
-              <div class="thumb-box-inner">
-                <canvas class="thumb" width=224 height=224 id="left-thumb"></canvas>
-              </div>
-              <button class="record-button" id="left"/><span>Add Sample</span></button>
-            </div>
-            <p>
-              <span id="left-total">0</span> examples
-            </p>
-          </div>
-        </div><!-- ./panel-cell -->
-
-        <div class="panel-cell panel-cell-center panel-cell-fill">
-        </div><!-- ./panel-cell -->
-
-        <div class="panel-cell panel-cell-right">
-          <div class="thumb-box">
-            <div class="thumb-box-outer">
-              <div class="thumb-box-inner">
-                <canvas class="thumb" width=224 height=224 id="right-thumb"></canvas>
-              </div>
-              <button class="record-button" id="right"/><span>Add Sample</span></button>
-            </div>
-            <p>
-              <span id="right-total">0</span> examples
-            </p>
-          </div>
-        </div><!-- ./panel-cell -->
-
-      </div><!-- /.panel-row -->
-
-      <div class="panel-row panel-row-bottom">
-
-        <div class="panel-cell panel-cell-left panel-cell-fill">
-        </div><!-- ./panel-cell -->
-
-        <div class="panel-cell panel-cell-center">
-          <div class="thumb-box">
-            <div class="thumb-box-outer">
-              <div class="thumb-box-inner">
-                <canvas class="thumb" width=224 height=224 id="down-thumb"></canvas>
-              </div>
-              <button class="record-button" id="down"/><span>Add Sample</span></button>
-            </div>
-            <p>
-              <span id="down-total">0</span> examples
-            </p>
-          </div>
-        </div><!-- ./panel-cell -->
-
-        <div class="panel-cell panel-cell-right panel-cell-fill">
-        </div><!-- ./panel-cell -->
-
-      </div><!-- /.panel-row -->
-
-
-    </div><!-- /.panel -->
+      
+            </div><!-- /.panel-row -->
+      
+          </div><!-- /.panel -->
+      
+          <div class="panel">
+      
+            <div class="panel-row panel-row-top">
+      
+              <div class="panel-cell panel-cell-up">
+                <div class="thumb-box">
+                  <div class="thumb-box-outer">
+                    <div class="thumb-box-inner">
+                      <canvas class="thumb" width=224 height=224 id="up-thumb"></canvas>
+                    </div>
+                    <button class="record-button" id="up"/></button>
+                    <div class="thumb-box-info">
+                      <p>
+                        <span id="up-total">0</span> Samples
+                      </p>      
+                    </div> 
+                  </div>
+                </div>
+              </div><!-- ./panel-cell -->
+      
+              <div class="panel-cell panel-cell-left">
+                <div class="thumb-box">
+                  <div class="thumb-box-outer">
+                    <div class="thumb-box-inner">
+                      <canvas class="thumb" width=224 height=224 id="left-thumb"></canvas>
+                    </div>
+                    <button class="record-button" id="left"/></button>
+                    <div class="thumb-box-info">
+                      <p>
+                        <span id="left-total">0</span> Samples
+                      </p>      
+                    </div>
+                  </div>
+                </div>
+              </div><!-- ./panel-cell -->
+      
+              <div class="panel-cell panel-cell-right">
+                <div class="thumb-box">
+                  <div class="thumb-box-outer">
+                    <div class="thumb-box-inner">
+                      <canvas class="thumb" width=224 height=224 id="right-thumb"></canvas>
+                    </div>
+                    <button class="record-button" id="right"/></button>
+                    <div class="thumb-box-info">
+                      <p>
+                        <span id="right-total">0</span> Samples
+                      </p>      
+                    </div> 
+                  </div>
+                </div>
+              </div><!-- ./panel-cell -->
+      
+              <div class="panel-cell panel-cell-down">
+                <div class="thumb-box">
+                  <div class="thumb-box-outer">
+                    <div class="thumb-box-inner">
+                      <canvas class="thumb" width=224 height=224 id="down-thumb"></canvas>
+                    </div>
+                    <button class="record-button" id="down"/></button>
+                    <div class="thumb-box-info">
+                      <p>
+                        <span id="down-total">0</span> Samples
+                      </p>      
+                    </div> 
+                  </div>
+                </div>
+              </div><!-- ./panel-cell -->
+          
+            </div><!-- /.panel-row -->
+      
+          </div><!-- /.panel -->
+      
+    </div>
 
   </div><!-- /#controller -->
-
+ 
   <script src="index.js"></script>
 </body>
 </html>

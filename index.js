@@ -46,8 +46,7 @@ async function loadMobilenet() {
 }
 
 // When the UI buttons are pressed, read a frame from the webcam and associate
-// it with the class label given by the button. up, down, left, right are
-// labels 0, 1, 2, 3 respectively.
+// it with the class label given by the flash card labeled 0, 1, 2, 3 respectively.
 ui.setExampleHandler(label => {
   tf.tidy(() => {
     const img = webcam.capture();
