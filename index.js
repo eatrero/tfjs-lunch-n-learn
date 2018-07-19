@@ -22,7 +22,7 @@ import * as ui from './ui';
 import {Webcam} from './webcam';
 
 // The number of classes we want to predict. In this example, we will be
-// predicting 4 classes for up, down, left, and right.
+// predicting 4 classes (one for each of the cards)
 const NUM_CLASSES = 4;
 
 // A webcam class that generates Tensors from the images from the webcam.
